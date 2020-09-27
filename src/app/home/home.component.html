@@ -1,0 +1,16 @@
+<div class="row product-grid">
+    <div class="col-md-4 col-6" *ngFor="let item of Items">
+        <div class="image-container">
+            <img class="product-image" src="{{item.Image}}" alt="">
+            <div class="overlay">
+                <div class="btn btn-info mb-3"  [routerLink]="['/product', item.Title]">View Details</div>
+                <div class="btn btn-secondary" (click)="addToCart(item)">Add To Cart</div>
+            </div>
+        </div>
+        <div class="product-details">
+            <div class="product-brand">{{item.Brand}}</div>
+            <div class="product-title">{{item.Title}}</div>
+            <div class="product-price">{{item.Price | currency:'USD':true}}</div>
+        </div>
+    </div>
+</div>
