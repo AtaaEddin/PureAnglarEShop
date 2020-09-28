@@ -1,7 +1,7 @@
+import { ProductItem } from './../model/ProductItem';
 import { CartService } from './../services/cart.service';
 import { ProductService } from './../services/products.service';
 import { Component, OnInit } from '@angular/core';
-import { ProductItem } from '../model/ProductItem';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
@@ -32,7 +32,7 @@ export class ProductComponent implements OnInit {
     this.quantity = newQuantity;
   }
 
-  addToCart = () => {
-    if (this.quantity) { this.cartService.AddToCart({item: this.product, quantity: this.quantity}); }
+  addToCart = (product: ProductItem) => {
+    if (this.quantity) { this.cartService.AddToCart({item: product, quantity: this.quantity}); }
   }
 }
